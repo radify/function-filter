@@ -1,6 +1,6 @@
 {
   "name": "function-filter",
-  "version": "0.0.0",
+  "version": "1.0.0",
   "description": "Simple AOP using filterable function wrappers",
   "repository": "radify/function-filter",
   "main": "lib/function-filter.js",
@@ -14,7 +14,6 @@
     "gulp-babel": "^6.1.0",
     "gulp-jasmine": "^2.2.1",
     "gulp-istanbul": "^0.10.3",
-    "gulp-jasmine": "^2.2.1",
     "isparta": "^4.0.0",
     "require-dir": "^0.3.0"
   },
@@ -40,4 +39,3 @@
     "esnext": true
   }
 }
-
