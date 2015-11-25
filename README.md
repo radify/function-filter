@@ -25,21 +25,74 @@
 
 ### What is function-filter?
 
-REQUIRED
+function-filter is an efficient and lightweight way to allow logic to be
+extended across different concerns of your application. By wrapping a function
+in a filter, it is possible to dynamically intercept and optionally modify
+parameter and return values to the underlying function.
+
+In addition, filters can call alternative logic, or nothing at all, depending
+on the use case.
+
+Some examples of why you may want to do this include:
+
+- Logging the parameters passed to a critical function before it is called, and
+  the returned value afterwards.
+- Mutating queries to a database resource, to enforce security constraints.
+- Mutating query results, to redact private information.
+- Memoizing expensive functions based on their input parameters.
 
 ### Installation
 
 `npm install function-filter`
 
-REQUIRED
-
 ### Usage
 
-REQUIRED
+Usage under ES5 and ES6 is essentially the same:
+
+ES5:
+```js
+var filter = require('function-filter').default;
+var myFn = filter(function(chain, argA, argB) {
+	console.log(argA, argB);
+});
+
+myFn("Hello", "World!");
+// Hello World!
+
+myFn.addFilter(function(chain, argA, argB) {
+	console.log("Originally called with:", argA, argB);
+	return chain.next(chain, "Goodbye", argB);
+});
+
+myFn("Hello", "World!");
+// Originally called with Hello World!
+// Goodbye World!
+```
+
+ES6:
+```js
+import filter from 'function-filter';
+const myFn = filter((chain, argA, argB) => {
+	console.log(argA, argB);
+});
+
+myFn("Hello", "World!");
+// Hello World!
+
+myFn.addFilter((chain, argA, argB) => {
+	console.log("Originally called with:", argA, argB);
+	return chain.next(chain, "Goodbye", argB);
+});
+
+myFn("Hello", "World!");
+// Originally called with Hello World!
+// Goodbye World!
+```
 
 ### Changelog
 
-This project adheres to [Semantic Versioning](http://semver.org/). For a list of detailed changes, please refer to [CHANGELOG.md](CHANGELOG.md).
+This project adheres to [Semantic Versioning](http://semver.org/). For a list
+of detailed changes, please refer to [CHANGELOG.md](CHANGELOG.md).
 
 ### Contributing
 
@@ -47,7 +100,8 @@ Please see [CONTRIBUTING.md](CONTRIBUTING.md).
 
 ### Prior Art
 
-OPTIONAL
+This implementation is heavily inspired by [li3](http://li3.me)'s
+[filter](http://li3.me/docs/manual/common-tasks/basic-filters.md) system.
 
 ### License
 
