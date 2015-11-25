@@ -15,7 +15,8 @@
     "gulp-jasmine": "^2.2.1",
     "gulp-istanbul": "^0.10.3",
     "gulp-jasmine": "^2.2.1",
-    "isparta": "^4.0.0"
+    "isparta": "^4.0.0",
+    "require-dir": "^0.3.0"
   },
   "babel": {
     "presets": [
@@ -24,11 +25,11 @@
   },
   "build": {
     "paths": {
-      "src":      "src",
-      "spec":     "spec",
-      "dist":     "lib",
-      "docs":     "docs",
-      "build":    "build",
+      "src": "src",
+      "spec": "spec",
+      "dist": "lib",
+      "docs": "docs",
+      "build": "build",
       "coverage": "coverage"
     },
     "watch": {
