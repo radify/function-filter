@@ -6,12 +6,12 @@ import istanbul from 'gulp-istanbul';
 import reqDir   from 'require-dir';
 
 import {
-  Instrumenter as isparta
-} from 'isparta';
-
-import {
   build as config
 } from './package.json';
+
+import {
+  Instrumenter as isparta
+} from 'isparta';
 
 gulp.task('clean', () => {
   return del([config.paths.dist, config.paths.coverage], { force: true });
@@ -56,4 +56,6 @@ const coverage = {
 };
 gulp.task('coverage', gulp.series(coverage.setup, coverage.run));
 
-reqDir(config.paths.build);
+try {
+  reqDir(config.paths.build);
+} catch(err) {}
