@@ -1,0 +1,42 @@
+{
+  "name": "function-filter",
+  "version": "0.0.0",
+  "description": "Simple AOP using filterable function wrappers",
+  "repository": "radify/function-filter",
+  "main": "lib/function-filter.js",
+  "author": "Radify",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "babel-core": "^6.2.1",
+    "babel-preset-es2015": "^6.1.18",
+    "del": "^2.1.0",
+    "gulp": "gulpjs/gulp#4.0",
+    "gulp-babel": "^6.1.0",
+    "gulp-jasmine": "^2.2.1",
+    "gulp-istanbul": "^0.10.3",
+    "gulp-jasmine": "^2.2.1",
+    "isparta": "^4.0.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015"
+    ]
+  },
+  "build": {
+    "paths": {
+      "src":      "src",
+      "spec":     "spec",
+      "dist":     "lib",
+      "docs":     "docs",
+      "build":    "build",
+      "coverage": "coverage"
+    },
+    "watch": {
+      "paths": "src"
+    }
+  },
+  "jshintConfig": {
+    "esnext": true
+  }
+}
+

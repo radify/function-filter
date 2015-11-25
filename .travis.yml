@@ -1,0 +1,13 @@
+language: node_js
+
+node_js:
+  - 0.12
+  - 4.2
+
+script:
+  - gulp ci
+
+addons:
+  code_climate:
+    repo_token:
+      secure: "WxTGpkRbr2Yn9747x8aB/+z1oItSHp8l0I9l/4hPMxyuKaU2xo+LRUueGnxbCfGdBiLjmlW5KvZLXCEYBczu7d7m/Vo+99P/dDn6WENrjY4ZZIwdteagEgHcOT3812B8AY3a4kTDYKRRbckZtgaj0oXRletE2T3fR+q68EoJMhnwO9ge9LZHwzc5I01g137bnKXDKmr6HsilbErilpWfn9Mc5JZpEH2D7mElPW38AwAiBbGQIBcKOYRH40AACio4JniJNW/xCdMuCvrhVuj1vImo3En7CFfJKbRQo/psxPGXpMgUDh83wpO7TD3Y25HOVOutbgkrbvk5EPzOZJD4vyDP3B4vyJUd6QReCqaV6AEysHrWK8eq7baNzHd2i2oaKqBtHDmLUlDEGtFZk+Bv/MaHYKFku1B9GUOOLCbhAs0wqh1lMe+oAZarnDafN/pQSCNTYklLWjdq87ALDukqiWijWT33IXbK46KHKHYINNh5pi5We0V0wVq+SJKH+QNhqrr4sB3+hH0ztWqiB+7LYfwQbXmmyXohFA1g1ItyJoyq+IjnNk5Ci2+egw+XvpIyLset1ltXrLTu/tzI3RwERJxtCsA/j7hCi475PhK1usAc+LG2bXlu37NdnUNnr31wlJEQ80uh7xM18qk2GOqAPkzAUiTa+HiKi5VAJ3YLD/4="
